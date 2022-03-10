@@ -1,0 +1,23 @@
+body {
+  background-color: burlywood;
+}
+
+label {
+  color: rgb(241, 242, 248);
+}
+
+.logo-mini {
+  max-width: 100%;
+  max-height: 100%;
+
+  background: transparent url("src\assets\contrutor.png") no-repeat;
+
+}
+
+.logo-max {
+  max-width: 500%;
+  max-height: 500%;
+
+  background: transparent url("src\assets\pngegg.png") no-repeat;
+
+}

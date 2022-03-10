@@ -1,0 +1,71 @@
+
+<body style="flex: auto;">
+
+<form style="padding: 30px;" #formValidate="ngForm">
+
+  <div class="login-logo">
+    <div class="logo-mini" style="padding: 10px;"><h1 style="color: antiquewhite;">Cadastro Construtor</h1>
+&nbsp;
+
+    </div>
+
+  </div>
+
+<div class="form-row">
+  <div class="form-group col-md-1">
+    <label for="id">ID</label>
+    <input type="text" [(ngModel)]="usuario.id" class="form-control" id="id" readonly="true" name="id" autocomplete="false">
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-5">
+    <label for="nome">Nome</label>
+    <span style="color: red; font-size: 23px;" *ngIf="nomeValidate.invalid" > *</span>
+    <input type="text" #nomeValidate="ngModel" [(ngModel)]="usuario.nome" class="form-control" id="nome" required="true" name="nome" autocomplete="false">
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-5">
+    <label for="login">Login</label>
+    <span style="color: red; font-size: 23px;" *ngIf="loginValidate.invalid" > *</span>
+    <input type="text" #loginValidate="ngModel" [(ngModel)]="usuario.login" class="form-control" id="login" name="login" autocomplete="false" required="true">
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-5">
+    <label for="login">Senha</label>
+    <span style="color: red; font-size: 23px;" *ngIf="senhaValidate.invalid" > *</span>
+    <input type="password" #senhaValidate="ngModel" [(ngModel)]="usuario.senha" class="form-control" id="senha" name="senha" autocomplete="false" required="true">
+  </div>
+</div>
+
+<div class="form-row">
+  <div class="form-group col-md-5">
+    <label for="cep">CEP</label>
+    <span style="color: red; font-size: 23px;" *ngIf="cepValidate.invalid" > *</span>
+    <input type="text" #cepValidate="ngModel" [(ngModel)]="usuario.cep" class="form-control" id="cep" name="cep" autocomplete="false" required="true">
+  </div>
+</div>
+
+<div class="form-row" style="margin-top: 10px;" >
+  <div class="form-group col-md-5">
+     <button type="button" class="btn btn-primary" routerLink="/userList">Voltar</button>
+     <button (click)="novo()" style="margin-left: 8px" type="button" class="btn btn-primary">Novo</button>
+     <button [disabled]="formValidate.invalid" (click)="salvarUser()" style="margin-left: 8px" type="button" class="btn btn-warning">Salvar</button>
+  </div>
+</div>
+
+<div class="form-row" style="margin-top: 10px;">
+  <div class="logo-max" style="padding: 100%">
+&nbsp;
+  </div>
+</div>
+
+</form>
+
+
+</body>
+

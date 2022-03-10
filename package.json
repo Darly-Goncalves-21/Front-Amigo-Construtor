@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --watch --configuration development",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -18,9 +18,13 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "bootstrap": "^5.0.1",
+    "jquery": "^3.5.0",
+    "popper.js": "^1.16.1-lts",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "autoprefixer" : " ^6.5.4 "
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.1.2",
@@ -36,4 +40,6 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.5.2"
   }
+
+
 }

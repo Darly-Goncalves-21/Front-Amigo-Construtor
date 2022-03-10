@@ -1,0 +1,12 @@
+
+form {
+  margin: 10% 30% 30% 30%;
+}
+
+.ng-valid[required], .ng-valid.required {
+  border-left: 5px solid #42A948; /*green*/
+}
+/*
+.ng-valid:not(from) {
+	border-left: 5px solid #a94442; /*red
+}*/

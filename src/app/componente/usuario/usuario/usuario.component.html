@@ -1,0 +1,34 @@
+
+<div>
+<form class="d-flex">
+  <input class="form-control me-2" id="nome" name="nome" [(ngModel)]="nome" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success" (click)="buscaPorNome()" type="button">Search</button>
+
+  <button class="btn btn-success" [routerLink]="['/usuarioAdd']" style="margin-left: 5px;" routerLinkActive="router-link-active">Cadastrar</button>
+
+</form>
+</div>
+
+<div>
+<table class="table">
+  <thead class="thead-dark">
+    <th scope="col">ID</th>
+    <th scope="col">Login</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Deletar</th>
+    <th scope="col">Editar</th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{student.id}}</td>
+      <td>{{student.login}}</td>
+      <td>{{student.nome}}</td>
+
+      <td><button class="btn btn-primary" (click)="deletarUser(student.id)">Deletar</button></td>
+      <td><button class="btn btn-secondary" [routerLink]="['/usuarioAdd', student.id]" routerLinkActive="router-link-active">Editar</button></td>
+    </tr>
+  </tbody>
+
+</table>
+</div>
