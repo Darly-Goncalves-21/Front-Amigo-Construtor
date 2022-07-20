@@ -1,7 +1,9 @@
+import { Telefone } from './../../../model/telefone';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { User } from 'src/app/model/user';
+
 
 @Component({
   selector: 'app-usuario-add',
@@ -11,6 +13,8 @@ import { User } from 'src/app/model/user';
 export class UsuarioAddComponent implements OnInit {
 
   usuario = new User();
+
+  telefone = new Telefone();
 
   constructor(private routeActive: ActivatedRoute, private userService: UsuarioService) { }
 
@@ -44,7 +48,35 @@ export class UsuarioAddComponent implements OnInit {
 
   novo(){
     this.usuario = new User();
+    this.telefone = new Telefone();
+    console.log("Testando !")
   }
+
+  deletartelefone(id : any, i : any){
+
+    if(id == null){
+      this.usuario.telefones.splice(i,1);
+      return;
+    }
+
+    if (id !== null && confirm("Deseja realmente remover esse contato ?")){
+        this.userService.deletarTelefone(id).subscribe(data => {
+
+          this.usuario.telefones.splice(i,1);
+
+        });
+    }
+  }
+
+  addFone(){
+    if (this.usuario.telefones === undefined){
+      this.usuario.telefones = new Array<Telefone>();
+    }
+
+    this.usuario.telefones.push(this.telefone);
+    this.telefone = new Telefone();
+  }
+
 
 
 }

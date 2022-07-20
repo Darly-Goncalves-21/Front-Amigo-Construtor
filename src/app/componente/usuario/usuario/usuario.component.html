@@ -20,7 +20,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let student of students">
+    <tr *ngFor="let student of students | paginate: { itemsPerPage:5, currentPage: p, totalItems: total }; let i = index">
       <td>{{student.id}}</td>
       <td>{{student.login}}</td>
       <td>{{student.nome}}</td>
@@ -29,6 +29,11 @@
       <td><button class="btn btn-secondary" [routerLink]="['/usuarioAdd', student.id]" routerLinkActive="router-link-active">Editar</button></td>
     </tr>
   </tbody>
-
 </table>
+
+<div class="text-center">
+  <pagination-controls (pageChange)="carregarPagina(p = $event);"
+   previousLabel = "Voltar" nextLabel = "Avançar" ></pagination-controls>
+  </div>
+
 </div>

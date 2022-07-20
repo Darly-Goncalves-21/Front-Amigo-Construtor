@@ -22,8 +22,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     if(localStorage.getItem('token') !== null &&
     localStorage.getItem('token')?.toString().trim() !== null){
+      console.log("Teste Log positivo")
 
       this.router.navigate(['home']);
+    }else {
+      console.log("Teste Log")
     }
   }
 

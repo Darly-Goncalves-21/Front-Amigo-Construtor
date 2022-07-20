@@ -15,6 +15,10 @@ export class UsuarioComponent implements OnInit {
 
   nome!: string;
 
+  p: number = 1;
+
+  total!: number;
+
   constructor(private usuarioService: UsuarioService) { }
 
     ngOnInit() {
@@ -25,6 +29,9 @@ export class UsuarioComponent implements OnInit {
   }
 
   deletarUser(id : any){
+
+    if (confirm('Deseja deletar esse registro ?')){
+
     this.usuarioService.deletar(id).subscribe(data => {
       this.usuarioService.getStudentList().subscribe(data =>{
         this.students = data;
@@ -32,11 +39,16 @@ export class UsuarioComponent implements OnInit {
       });
     });
   }
+  }
 
   buscaPorNome(){
     this.usuarioService.consultaNome(this.nome).subscribe(data => {
       this.students = data;
     });
+  }
+
+  carregarPagina(pagina: any){
+    console.info("Pagina " + pagina)
   }
 
 }

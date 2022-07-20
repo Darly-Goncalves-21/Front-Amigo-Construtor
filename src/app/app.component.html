@@ -1,6 +1,6 @@
 
 <div id="page-content-wrapper" >
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" [hidden]="esconderBarra()">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" [hidden]="esconderBarra()">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -11,15 +11,15 @@
           <a class="nav-link" (click)="sair()">Sair</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Menu
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-             <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Link 3</a>
-          </div>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
         </li>
       </ul>
     </div>

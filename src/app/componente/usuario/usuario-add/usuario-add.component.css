@@ -1,5 +1,5 @@
 body {
-  background-color: burlywood;
+  background-color: rgb(108, 182, 216);
 }
 
 label {
@@ -14,10 +14,4 @@ label {
 
 }
 
-.logo-max {
-  max-width: 500%;
-  max-height: 500%;
 
-  background: transparent url("src\assets\pngegg.png") no-repeat;
-
-}

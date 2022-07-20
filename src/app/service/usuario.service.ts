@@ -36,4 +36,16 @@ export class UsuarioService {
     return this.http.put<any>(AppConstants.baseUrl, user);
    }
 
+   userAutenticado(){
+    if(localStorage.getItem('token') !== null &&
+    localStorage.getItem('token')?.toString().trim() !== null){
+      return true;
+   }else {
+    return false;
+   }
+  }
+
+  deletarTelefone(id : any) : Observable<any>{
+    return this.http.delete(AppConstants.baseUrl + "remover-telefone/" + id, {responseType : 'text'});
+  }
 }
